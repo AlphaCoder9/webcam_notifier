@@ -14,6 +14,7 @@ first_frame = None
 status_list = []
 count = 1
 
+
 # Def to delete the images after program exits.
 def clean_folder():
     print("CLEAN FOLDER HAS STARTED...")
@@ -60,7 +61,7 @@ while True:
         email_thread = Thread(target=send_email, args=(image_with_object,))
         email_thread.daemon = True
         clean_folder_thread = Thread(target=clean_folder)
-        #clean_folder_thread.daemon = True # You can enabaled this
+        # clean_folder_thread.daemon = True # You can enabaled this
         email_thread.start()
 
     print(status_list)
