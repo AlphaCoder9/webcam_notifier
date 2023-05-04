@@ -14,7 +14,7 @@ first_frame = None
 status_list = []
 count = 1
 
-
+# Def to delete the images after program exits.
 def clean_folder():
     print("CLEAN FOLDER HAS STARTED...")
     images = glob.glob("images/*.png")
@@ -56,10 +56,11 @@ while True:
     status_list.append(status)
     status_list = status_list[-2:]
     if status_list[0] == 1 and status_list[1] == 0:
+        # Using Treading to fix Smooth image Capturing.
         email_thread = Thread(target=send_email, args=(image_with_object,))
         email_thread.daemon = True
         clean_folder_thread = Thread(target=clean_folder)
-        #clean_folder_thread.daemon = True
+        #clean_folder_thread.daemon = True # You can enabaled this
         email_thread.start()
 
     print(status_list)
@@ -69,5 +70,5 @@ while True:
     if key == ord("x"):
         break
 video.release()
-
+# Note: Clean folder ll execute right after the programs ends.
 clean_folder_thread.start()
