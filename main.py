@@ -59,10 +59,8 @@ while True:
         email_thread = Thread(target=send_email, args=(image_with_object,))
         email_thread.daemon = True
         clean_folder_thread = Thread(target=clean_folder)
-        clean_folder_thread.daemon = True
-
+        #clean_folder_thread.daemon = True
         email_thread.start()
-
 
     print(status_list)
     cv2.imshow("Video", frame)
