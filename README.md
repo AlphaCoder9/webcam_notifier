@@ -6,6 +6,6 @@ Same technique is used by state toll plazas they also use OCR but we
 are not going to work with that in this project. 
 
 note: images are made up of pixels and each pixel has a dedicated number 
-range from 0 to 255. openCV use RGB RED, GREEN AND BLUE. 
+range from 0 to 255. openCV use BGR Blue,Green,Red 
 
 
